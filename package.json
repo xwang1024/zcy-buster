@@ -1,0 +1,10 @@
+{
+  "name": "zcy-buster",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1"
+  },
+  "devDependencies": {}
+}
