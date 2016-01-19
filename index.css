@@ -2,6 +2,14 @@ body {
   margin: 0;
   background-color: #eeeeee;
 }
+
+button {
+  transition:         background-color 0.2s, border-color 0.2s, color 0.2s;
+  -moz-transition:    background-color 0.2s, border-color 0.2s, color 0.2s;
+  -webkit-transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  -o-transition:      background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
 .header-wrapper {
   position: fixed;
   background-color:#FFFFFF;
@@ -64,4 +72,5 @@ body {
 
 .sidebar-collapse>button:hover {
   background-color: #434958;
+  color: #818C98;
 }
