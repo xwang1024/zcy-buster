@@ -5,22 +5,31 @@
   height:100%;
   overflow: hidden;
 
+  color: #ADB1B6;
+  font-size: 12px;
+
+  .nav-title {
+    display: block;
+    padding: 15px 0 15px 15px;
+    line-height: 18px;
+    [class^="icon"] {
+      display: block;
+      float: left;
+      margin-right: 13px;
+    }
+    .icon-dashboard {
+      margin-top: 2px;
+    }
+    &:hover {
+      color: #ffffff;
+      background-color: #545a6b;
+    }
+  }
+
   .sidebar-header {
     margin-top: 61px;
-
-    >.nav-title {
-      display: block;
-      color: #adb1b6;
-      text-decoration: none;
-      font-size: 12px;
-      padding: 16px 0 16px 43px;
-      line-height: 17px;
+    .nav-title {
       border-bottom: 1px solid #545a6b;
-
-      &:hover {
-        color: #ffffff;
-        background-color: #545a6b;
-      }
     }
   }
 
@@ -30,8 +39,24 @@
     top: 161px;
     bottom: 20px;
     left: 0;
-    right: -18px; /* Decrease this value for cross-browser compatibility */
+    right: -18px; /* hide scroll bar */
     overflow: auto;
+
+    ul.sidebar-nav {
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      >li.nav-item {
+        display: block;
+        margin: 0;
+        padding: 0;
+        a {
+          display: block;
+          padding: 12px 16px;
+        }
+      }
+    }
   }
 
   .sidebar-collapse {

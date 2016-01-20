@@ -1,0 +1,15 @@
+$default-sanserif-typo: "Microsoft Yahei", sanserif;
+
+body {
+  font-family: $default-sanserif-typo;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-primary {
+  color: $primary-color;
+}
