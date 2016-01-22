@@ -3,4 +3,10 @@ button {
   -moz-transition:    background-color 0.2s, border-color 0.2s, color 0.2s;
   -webkit-transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   -o-transition:      background-color 0.2s, border-color 0.2s, color 0.2s;
+
+  outline: none;
+}
+
+a {
+  outline: none;
 }
