@@ -9,6 +9,7 @@
   font-size: 12px;
 
   .nav-title {
+    white-space: nowrap;
     display: block;
     padding: 15px 0 15px 15px;
     line-height: 18px;
@@ -16,12 +17,14 @@
       display: block;
       float: left;
       margin-right: 13px;
+      margin-bottom: 1px;
     }
     .icon-dashboard {
       margin-top: 2px;
     }
     .icon-folder {
       margin-top: 2px;
+      margin-bottom: 2px;
     }
     [class^="icon-sidebar-toggle"] {
       float: right;

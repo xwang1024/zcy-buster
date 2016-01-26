@@ -2,3 +2,105 @@ body {
   background-color: $background-color;
   margin: 0;
 }
+
+body {
+  >.header-wrapper {
+    >.logo {
+      transition:         width 0.2s;
+      -moz-transition:    width 0.2s;
+      -webkit-transition: width 0.2s;
+      -o-transition:      width 0.2s;
+    }
+    >.header {
+      transition:         padding-left 0.2s;
+      -moz-transition:    padding-left 0.2s;
+      -webkit-transition: padding-left 0.2s;
+      -o-transition:      padding-left 0.2s;
+    }
+  }
+
+  >.sidebar-wrapper {
+    transition:         width 0.2s;
+    -moz-transition:    width 0.2s;
+    -webkit-transition: width 0.2s;
+    -o-transition:      width 0.2s;
+    >.sidebar-header {
+      >.nav-title {
+        >[class^="icon"] {
+          transition:         margin-left 0.2s;
+          -moz-transition:    margin-left 0.2s;
+          -webkit-transition: margin-left 0.2s;
+          -o-transition:      margin-left 0.2s;
+        }
+        >span {
+
+        }
+      }
+    }
+    >.sidebar {
+      .nav-title {
+        >[class^="icon"] {
+          transition:         margin-left 0.2s;
+          -moz-transition:    margin-left 0.2s;
+          -webkit-transition: margin-left 0.2s;
+          -o-transition:      margin-left 0.2s;
+        }
+        .icon-sidebar-toggle-down {
+        }
+        >span {
+        }
+      }
+    }
+    >.sidebar-collapse {
+      transition:         width 0.2s;
+      -moz-transition:    width 0.2s;
+      -webkit-transition: width 0.2s;
+      -o-transition:      width 0.2s;
+    }
+  }
+}
+
+body.transform {
+  >.header-wrapper {
+    >.logo {
+      width: 60px;
+    }
+    >.header {
+      padding-left: 60px;
+    }
+  }
+
+  >.sidebar-wrapper {
+    width: 60px;
+    >.sidebar-header {
+      >.nav-title {
+        height: 18px;
+        >[class^="icon"] {
+          // float: none;
+          margin-left: 7px;
+        }
+        >span {
+          display: none;
+        }
+      }
+    }
+    >.sidebar {
+      .nav-title {
+        height: 18px;
+        >[class^="icon"] {
+          // float: none;
+          margin-left: 7px;
+        }
+        .icon-sidebar-toggle-down {
+          display: none;
+        }
+        >span {
+          display: none;
+        }
+      }
+    }
+    >.sidebar-collapse {
+      width: 60px;
+    }
+  }
+}
