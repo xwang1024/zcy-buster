@@ -13,3 +13,12 @@ a {
 .text-primary {
   color: $primary-color;
 }
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+}
+.dot-primary {
+  background-color: #197aff;
+}
