@@ -18,7 +18,6 @@ $(document).ready(function() {
             event.stopPropagation();
           });
 
-
       });
       $('body').unbind().bind('mouseover click', function(event) {
         $('.nav-toggle-menu.nav-menu-float').trigger('mouseleave');
@@ -39,5 +38,5 @@ $(document).ready(function() {
   });
 
   initSidebar();
-  
+
 });
