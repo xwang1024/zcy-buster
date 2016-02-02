@@ -73,7 +73,7 @@ body {
   float: right !important
 }
 
-body.transform {
+body.collapsed {
   >.header-wrapper {
     >.logo {
       width: 60px;
@@ -88,7 +88,6 @@ body.transform {
     >.sidebar-header {
       >.nav-title {
         >[class^="icon"] {
-          // float: none;
           margin-left: 7px;
         }
         >span {
@@ -99,7 +98,6 @@ body.transform {
     >.sidebar {
       .nav-title {
         >[class^="icon"] {
-          // float: none;
           margin-left: 7px;
         }
         .icon-sidebar-toggle-down {

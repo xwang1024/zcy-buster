@@ -55,9 +55,12 @@
     }
     >li.nav-item {
       display: block;
+      .dot {
+        display: none;
+      }
     }
 
-    &.active {
+    &.active, &.nav-toggle-menu {
       opacity: 1;
     }
 
@@ -103,7 +106,7 @@
         }
       }
     }
-    >ul.nav-toggle-menu.active {
+    ul.nav-toggle-menu.nav-menu-float {
       position: fixed;
       background: #393f4d;
       width: 150px;
@@ -116,6 +119,7 @@
       }
       .nav-item {
         .dot {
+          display: block;
           margin-left: 16px;
           margin-top: 18px;
           margin-right: 10px;
@@ -125,6 +129,10 @@
         }
       }
 
+      transition:         opacity .2s ease;
+      -moz-transition:    opacity .2s ease;
+      -webkit-transition: opacity .2s ease;
+      -o-transition:      opacity .2s ease;
     }
   }
 
