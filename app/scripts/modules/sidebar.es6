@@ -18,6 +18,16 @@ define(function(require, exports, module) {
       });
 
       vm.initBindings();
+
+      $(window).hashchange( () => {
+        vm.highlightItem();
+      });
+      vm.highlightItem();
+    }
+
+    highlightItem() {
+      $('.sidebar-wrapper .active[href]').removeClass('active');
+      $('.sidebar-wrapper [href="'+window.location.hash+'"]').addClass('active');
     }
 
     initBindings() {
