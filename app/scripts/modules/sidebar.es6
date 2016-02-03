@@ -1,5 +1,8 @@
 define(function(require, exports, module) {
-
+  /** *
+    * 侧边栏
+    * @author xwang1024@126.com
+    */
   class Sidebar {
     constructor() {
       /* 类代理 */
@@ -8,7 +11,7 @@ define(function(require, exports, module) {
       /* 成员变量 */
       vm.isCollapsed = $('body').hasClass('collapsed');
 
-      console.log(123)
+      // 绑定底部的toggle-collapse按钮
       $('.layout-collapse-btn').bind('click', function() {
         vm.toggleSidebar();
       });
@@ -18,7 +21,7 @@ define(function(require, exports, module) {
 
     initBindings() {
       let vm = this;
-      
+
       if(vm.isCollapsed) {
         $('.nav-title').unbind().bind('mouseover click', function(event) {
           event.stopPropagation();

@@ -45,4 +45,16 @@ gulp.task('sprite:watch', function () {
   gulp.watch('./images/sprite/*.png', ['sprite']);
 });
 
-gulp.task('default', ['es6', 'styles', 'sprite', 'es6:watch', 'styles:watch', 'sprite:watch']);
+gulp.task('view', function () {
+  gulp.src('index.html')
+    .pipe(gulp.dest('../'));
+  gulp.src('./views/**/*.html')
+    .pipe(gulp.dest('../page/'));
+});
+
+gulp.task('view:watch', function () {
+  gulp.watch('index.html', ['view'])
+  gulp.watch('./views/**/*.html', ['view']);
+});
+
+gulp.task('default', ['es6', 'styles', 'sprite', 'view', 'es6:watch', 'styles:watch', 'sprite:watch', 'view:watch']);
