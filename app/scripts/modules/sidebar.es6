@@ -1,10 +1,25 @@
 define(function(require, exports, module) {
-  var Sidebar = function() {
-    // 当前是否处于收起状态
-    var isCollapsed = $('body').hasClass('collapsed');
-    var initSidebar = function() {
-      // 针对不同的情况初始化不同的事件
-      if(isCollapsed) {
+
+  class Sidebar {
+    constructor() {
+      /* 类代理 */
+      let vm = this;
+
+      /* 成员变量 */
+      vm.isCollapsed = $('body').hasClass('collapsed');
+
+      console.log(123)
+      $('.layout-collapse-btn').bind('click', function() {
+        vm.toggleSidebar();
+      });
+
+      vm.initBindings();
+    }
+
+    initBindings() {
+      let vm = this;
+      
+      if(vm.isCollapsed) {
         $('.nav-title').unbind().bind('mouseover click', function(event) {
           event.stopPropagation();
           $('.nav-toggle-menu.nav-menu-float').trigger('mouseleave');
@@ -24,21 +39,20 @@ define(function(require, exports, module) {
           $('.nav-toggle-menu.nav-menu-float').trigger('mouseleave');
         })
       } else {
-        // 绑定父级菜单的点击事件
         $('.nav-title').unbind().bind('click', function() {
           $(this).siblings('.nav-toggle-menu').slideToggle(200).toggleClass('active');
         });
       }
     }
 
-    // 绑定底部变形按钮
-    $('.layout-collapse-btn').bind('click', function() {
-      $('body').toggleClass('collapsed');
-      isCollapsed = !isCollapsed;
-      initSidebar();
-    });
+    toggleSidebar() {
+      let vm = this;
 
-    initSidebar();
+      $('body').toggleClass('collapsed');
+      vm.isCollapsed = !vm.isCollapsed;
+      vm.initBindings();
+    }
   }
+
   module.exports = Sidebar;
 });
