@@ -13,6 +13,7 @@ define(function(require, exports, module) {
 
       // 绑定底部的toggle-collapse按钮
       $('.layout-collapse-btn').bind('click', function() {
+        $('.nav-toggle-menu').removeClass('active').removeAttr('style');
         vm.toggleSidebar();
       });
 
