@@ -50,7 +50,8 @@ define(function(require, exports, module) {
             $(this).remove();
         });
       }).done(function(data) {
-        $(Route.target).html(data)
+        $(Route.target).html(data);
+        $(document).scrollTop(0)
       });
     }
   }
