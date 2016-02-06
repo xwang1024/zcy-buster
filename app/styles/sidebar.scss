@@ -1,4 +1,11 @@
 .sidebar-wrapper {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
   position: fixed;
   background-color:#2C313E;
   width:180px;
@@ -8,12 +15,18 @@
   color: #ADB1B6;
   font-size: 12px;
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   .nav-title {
     white-space: nowrap;
     display: block;
     padding: 15px 0 15px 15px;
     line-height: 18px;
     height: 40px;
+
     [class^="icon"] {
       display: block;
       float: left;
@@ -32,6 +45,7 @@
     .nav-title {
       height: 50px;
       border-bottom: 1px solid #545a6b;
+      line-height: 20px;
     }
   }
 
@@ -66,7 +80,7 @@
     bottom: 20px;
     left: 0;
     right: -18px; /* hide scroll bar */
-    overflow: auto;
+    overflow-y: scroll;
 
     [class^="icon"] {
       margin-left: 2px;
@@ -75,7 +89,7 @@
       &[class^="icon-sidebar-toggle"] {
         float: right;
         margin-top: 7px;
-        margin-right: 20px;
+        margin-right: 0;
       }
     }
 
@@ -100,7 +114,7 @@
           }
           >li.nav-item {
             a {
-              padding-left: 43px;
+              padding-left: 47px;
             }
           }
         }

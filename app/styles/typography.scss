@@ -1,4 +1,4 @@
-$default-sanserif-typo: "Microsoft Yahei", sanserif;
+$default-sanserif-typo: "Helvetica Neue", "Arial", "Tahoma", "Hiragino Sans GB", "Microsoft Yahei", sanserif;
 
 body {
   font-family: $default-sanserif-typo;
@@ -7,7 +7,19 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #2687d0;
+
+  &.text-primary {
+    color: #24344e;
+  }
+
+  &.text-muted {
+    color: #bbbbbb;
+  }
+
+  &:hover {
+    text-decoration: underline;;
+  }
 }
 
 .text-primary {

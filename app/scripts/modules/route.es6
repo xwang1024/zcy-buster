@@ -4,11 +4,12 @@ define(function(require, exports, module) {
     * @author xwang1024@126.com
     */
   window.Route = {
-    target: ".content",
+    target: ".content-main",
     defaultPath: "dashboard",
     currentPath: "",
     viewRoot: "page",
     suffix: '.html',
+    listeners: [],
     init: () => {
       // 当前hash检测
       let loadPage = function() {
@@ -40,12 +41,12 @@ define(function(require, exports, module) {
           if ($("#loadingbar").length === 0) {
             $("body").append("<div id='loadingbar'></div>")
             $("#loadingbar").addClass("waiting").append($("<dt/><dd/>"));
-            let contentPercentage = $('.content').width()/$('body').width();
+            let contentPercentage = $('.content').outerWidth()/$('body').width();
             $("#loadingbar").width((50 + Math.random() * 30) * contentPercentage + "%");
           }
         }
       }).always(function() {
-        let contentPercentage = $('.content').width()/$('body').width();
+        let contentPercentage = $('.content').outerWidth()/$('body').outerWidth();
         $("#loadingbar").width(100 * contentPercentage + "%").delay(200).fadeOut(400, function() {
             $(this).remove();
         });
@@ -53,6 +54,24 @@ define(function(require, exports, module) {
         $(Route.target).html(data);
         $(document).scrollTop(0)
       });
+    }
+  }
+
+  window.Route.data = {
+    "dashboard": {
+      _name: "我的工作台",
+      _valid: true
+    },
+    "components": {
+      _name: "组件",
+      "typo": {
+        _name: "字体",
+        _valid: true
+      },
+      "color": {
+        _name: "颜色",
+        _valid: true
+      }
     }
   }
 });

@@ -1,0 +1,18 @@
+.breadcrumbs {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  font-size: 12px;
+
+  span {
+    color: #999999;
+    &.divider {
+      color: #cccccc;
+      margin: 0 8px;
+    }
+  }
+}
