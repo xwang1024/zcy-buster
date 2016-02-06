@@ -9,36 +9,44 @@ define(function(require, exports, module) {
       /* 类代理 */
       let vm = this;
 
+      $(window).hashchange( () => {
+        vm.init();
+      });
       vm.init();
     }
 
     init() {
-      try {
         let currentPath = window.location.hash.replace(/.*\#.*\!\//, "");
         let pathSplited = currentPath.split('/');
         let breadcrumbsInfo = [];
         let dataRoot = Route.data;
-        for(let p of pathSplited) {
+        for(let i = 0; i < pathSplited.length; i++) {
+          let p = pathSplited[i];
           dataRoot = dataRoot[p];
-          breadcrumbsInfo.push({
-            name: dataRoot._name,
-            valid: dataRoot._valid
-          });
+          if(typeof dataRoot !== 'undefined') {
+            breadcrumbsInfo.push({
+              name: dataRoot._name,
+              valid: dataRoot._valid
+            });
+          } else {
+            break;
+          }
         }
+
         let htmlElements = [];
-        for(let i in breadcrumbsInfo) {
-          if(breadcrumbsInfo[i].valid && i != breadcrumbsInfo.length-1) {
+
+        for(let i = 0; i < breadcrumbsInfo.length; i++) {
+          if(breadcrumbsInfo[i].valid && i < breadcrumbsInfo.length-1) {
             breadcrumbsInfo[i].href = '#!/' + pathSplited.slice(0,i+1).join('/');
             htmlElements.push(`<a href="`+breadcrumbsInfo[i].href+`">`+breadcrumbsInfo[i].name+`</a>`);
           } else {
             htmlElements.push(`<span>`+breadcrumbsInfo[i].name+`</span>`);
           }
         }
+
+
         let html = htmlElements.join(`<span class="divider">/</span>`);
         $('.breadcrumbs').html(html);
-      } catch(e) {
-        console.error('跳转到404页面')
-      }
 
     }
   }
