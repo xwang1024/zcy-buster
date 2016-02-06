@@ -62,8 +62,8 @@ define(function(require, exports, module) {
       _name: "我的工作台",
       _valid: true
     },
-    "components": {
-      _name: "组件",
+    "specifications": {
+      _name: "规范",
       "typo": {
         _name: "字体",
         _valid: true
