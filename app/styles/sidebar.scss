@@ -20,18 +20,7 @@
       margin-right: 13px;
       margin-bottom: 1px;
     }
-    .icon-dashboard {
-      margin-top: 2px;
-    }
-    .icon-folder {
-      margin-top: 2px;
-      margin-bottom: 2px;
-    }
-    [class^="icon-sidebar-toggle"] {
-      float: right;
-      margin-top: 7px;
-      margin-right: 20px;
-    }
+
     &:hover, &.active {
       color: #ffffff;
       background-color: #545a6b;
@@ -78,6 +67,17 @@
     left: 0;
     right: -18px; /* hide scroll bar */
     overflow: auto;
+
+    [class^="icon"] {
+      margin-left: 2px;
+      margin-top: 2px;
+
+      &[class^="icon-sidebar-toggle"] {
+        float: right;
+        margin-top: 7px;
+        margin-right: 20px;
+      }
+    }
 
     ul.sidebar-nav {
       display: block;
