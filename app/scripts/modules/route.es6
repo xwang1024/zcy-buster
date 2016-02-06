@@ -77,6 +77,13 @@ define(function(require, exports, module) {
         _name: "颜色",
         _valid: true
       }
+    },
+    "components": {
+      _name: "组件",
+      "panel": {
+        _name: "Panel",
+        _valid: true
+      },
     }
   }
 });
