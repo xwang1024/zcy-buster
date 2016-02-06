@@ -31,7 +31,12 @@ define(function(require, exports, module) {
         async: true,
         complete: (xhr, text) => {},
         cache: true,
-        error: (xhr, text, e) => {},
+        error: (xhr, text, e) => {
+          if(xhr.status === 404) {
+            window.location.hash = '#!/404';
+          }
+          console.log(xhr, text, e);
+        },
         global: true,
         headers: {},
         statusCode: {},

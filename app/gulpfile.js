@@ -57,4 +57,9 @@ gulp.task('view:watch', function () {
   gulp.watch('./views/**/*.html', ['view']);
 });
 
-gulp.task('default', ['es6', 'styles', 'sprite', 'view', 'es6:watch', 'styles:watch', 'sprite:watch', 'view:watch']);
+gulp.task('image', function () {
+  gulp.src('./images/*.png')
+    .pipe(gulp.dest('../img/'));
+});
+
+gulp.task('default', ['es6', 'styles', 'sprite', 'view', 'es6:watch', 'styles:watch', 'view:watch', 'image']);
