@@ -9,20 +9,22 @@ define(function(require, exports, module) {
     currentPath: "",
     viewRoot: "page",
     suffix: '.html',
-    listeners: [],
+    defaultView: '/dashboard',
     init: () => {
       // 当前hash检测
       let loadPage = function() {
+        if(window.location.hash === '') {
+          window.location.hash = '#!' + Route.defaultView;
+          return;
+        }
         Route.currentPath = window.location.hash.replace(/.*\#.*\!/, "");
         Route._load(Route.viewRoot + Route.currentPath + Route.suffix);
       }
       loadPage();
       // 加载页面
       $(window).hashchange( () => {
-        console.log('hash changed: ' + window.location.hash);
         loadPage();
       });
-      console.log('init route module');
     },
     _load: (path) => {
       $.ajax({
@@ -57,7 +59,7 @@ define(function(require, exports, module) {
         });
       }).done(function(data) {
         $(Route.target).html(data);
-        $(document).scrollTop(0)
+        $(document).scrollTop(0);
       });
     }
   }
